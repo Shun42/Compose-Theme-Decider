@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>作曲から逃げるな</title>
+    <link rel="stylesheet" href="../static/style.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="theme-panel" aria-live="polite">
+        <p class="eyebrow">今日はこれを作る！</p>
+        <h1>作曲から逃げるな</h1>
+
+        <dl class="theme-grid">
+          <div class="theme-item">
+            <dt>リファレンス</dt>
+            <dd id="artist">抽選中...</dd>
+          </div>
+          <div class="theme-item">
+            <dt>BPM</dt>
+            <dd id="bpm">抽選中...</dd>
+          </div>
+          <div class="theme-item">
+            <dt>セクション</dt>
+            <dd id="section">抽選中...</dd>
+          </div>
+        </dl>
+
+        <button id="draw-button" type="button">もう一度抽選する</button>
+      </section>
+
+      <section class="settings-panel">
+        <div class="settings-header">
+          <h2>抽選設定</h2>
+          <span id="save-status" class="save-status" aria-live="polite">保存済み</span>
+        </div>
+
+        <div class="settings-grid">
+          <label class="field">
+            <span>BPM 最小</span>
+            <input id="bpm-min" type="number" min="1" max="400">
+          </label>
+          <label class="field">
+            <span>BPM 最大</span>
+            <input id="bpm-max" type="number" min="1" max="400">
+          </label>
+        </div>
+
+        <label class="field">
+          <span>セクション</span>
+          <textarea id="sections-input" rows="4"></textarea>
+        </label>
+
+        <div class="settings-header compact">
+          <h3>リファレンス</h3>
+          <button id="add-artist-button" class="secondary-button" type="button">追加</button>
+        </div>
+
+        <div id="artist-list" class="artist-list"></div>
+
+        <button id="reset-settings-button" class="secondary-button wide" type="button">初期設定に戻す</button>
+      </section>
+    </main>
+
+    <script src="../static/app.js"></script>
+  </body>
+</html>
